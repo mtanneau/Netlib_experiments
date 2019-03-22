@@ -145,12 +145,12 @@ deps = ["Distributed", "InteractiveUtils", "Logging", "Random"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[Tulip]]
-deps = ["LinearAlgebra", "MathProgBase", "Printf", "Random", "SparseArrays", "Test"]
-git-tree-sha1 = "0b0ec71d0e221be4c989e89b836b1c0c9f568e7e"
-repo-rev = "master"
+deps = ["LinearAlgebra", "MathProgBase", "Printf", "SparseArrays", "Test"]
+git-tree-sha1 = "c5a3ebdbbcb0c7f8d2f475450eb2087a350ff65b"
+repo-rev = "Cleanup"
 repo-url = "https://github.com/ds4dm/Tulip.jl.git"
-uuid = "73c0e4d2-baba-522d-b8dd-a8e76b736cac"
-version = "0.0.0"
+uuid = "6dd1b50a-3aae-11e9-10b5-ef983d2400fa"
+version = "0.1.0"
 
 [[UUIDs]]
 deps = ["Random"]
