@@ -1,0 +1,8 @@
+[deps]
+Clp = "e2554f3b-3117-50c0-817c-e040a3ddf72d"
+ECOS = "e2685f51-7e38-5353-a97d-a921fd2c8199"
+GLPK = "60bf3e95-4087-53dc-ae20-288a0d20c6a6"
+GLPKMathProgInterface = "3c7084bd-78ad-589a-b5bb-dbd673274bea"
+MathProgBase = "fdba3010-5040-5b88-9595-932c9decdf73"
+Mosek = "6405355b-0ac2-5fba-af84-adbd65488c0e"
+Tulip = "73c0e4d2-baba-522d-b8dd-a8e76b736cac"
