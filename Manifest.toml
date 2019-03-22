@@ -146,7 +146,7 @@ uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[Tulip]]
 deps = ["LinearAlgebra", "MathProgBase", "Printf", "SparseArrays", "Test"]
-git-tree-sha1 = "c5a3ebdbbcb0c7f8d2f475450eb2087a350ff65b"
+git-tree-sha1 = "1b1c3b2c201f1d6f22ef6ad1fbcb9e6b772449fe"
 repo-rev = "Cleanup"
 repo-url = "https://github.com/ds4dm/Tulip.jl.git"
 uuid = "6dd1b50a-3aae-11e9-10b5-ef983d2400fa"
