@@ -4,7 +4,6 @@ using Random
 using DataFrames
 using CSV
 
-using Statistics
 using LinearAlgebra
 BLAS.set_num_threads(1)
 
