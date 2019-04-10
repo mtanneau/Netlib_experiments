@@ -16,13 +16,6 @@ import Tulip
 
 global const TIME_LIMIT = 300
 
-"""
-    gmean1(u)
-
-Compute the geometric mean with a shift of 1.
-"""
-gmean1(u) = exp(mean(log.(u .+ oneunit(eltype(u))))) - oneunit(eltype(u))
-
 # import solvers
 include("solvers.jl")
 
