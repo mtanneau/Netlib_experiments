@@ -35,6 +35,6 @@ results = benchmark(
 @info "Parsing results"
 df = extract_results(results)
 
-# write to CSV file
+# Export individual results
 @info "Exporting to csv file"
 CSV.write(dirname*"res_netlib.csv", df)
