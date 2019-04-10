@@ -13,7 +13,6 @@ const MPB = MathProgBase
 
 import Tulip
 
-DIRNAME = @__DIR__
 
 global const TIME_LIMIT = 300
 
@@ -40,7 +39,10 @@ const NAMES_COMM   = solver_name.(SOLVERS_COMM)
 
 Benchmark the given solvers over the set of instances.
 """
-function benchmark(files, solvers;
+function benchmark(
+    dir,
+    files,
+    solvers;
     verbose=false
 )
     
@@ -67,7 +69,7 @@ function benchmark(files, solvers;
         verbose && @printf "%12s" f
         
         # Read MPS file
-        m, n, c, b, A, collb, colub, ranges = Tulip.readmps("../dat/netlib/" * f)
+        m, n, c, b, A, collb, colub, ranges = Tulip.readmps(dir * f)
     
         for (s, name) in zip(solvers, names)
             
