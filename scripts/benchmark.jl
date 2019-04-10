@@ -124,57 +124,6 @@ function benchmark(files, solvers;
     return results
 end
 
-
-function main()
-
-    # Open-source solvers
-    # First compilation round
-    @info "Compilation rounds... This may take a few minutes"
-    benchmark(
-        ["AFIRO.SIF"],
-        [SOLVERS_OS; SOLVERS_COMM],
-        verbose=false
-    );
-    # Compilation round for Tulip
-    benchmark(
-        readdir("../dat/netlib"),
-        [sTLP()],
-        verbose=false
-    );
-
-    # Real deal
-    @info "Launching Netlib benchmark"
-    flush(stdout)
-    results = benchmark(
-        readdir("../dat/netlib"),
-        [SOLVERS_OS; SOLVERS_COMM],
-        verbose=true
-    );
-
-    # println()
-    # for metric in [:time, :success]
-    #     @printf "%12s" "$metric"
-    #     for solver in names
-    #         @printf "%10.3f" total(results, metric, solver)
-    #     end
-    #     @printf "\n"
-    # end
-
-    # extract results
-    df = extract_results(results)
-
-    # write to CSV file
-    CSV.write("./res_netlib.csv", df)
-
-    return nothing
-end
-
-total(results, metric, solver) = sum([
-    res[metric]
-    for (k, res) in results[solver]
-        if haskey(res, metric) && res[metric] < TIME_LIMIT
-])
-
 """
     extract_results(res)
 
@@ -223,5 +172,3 @@ function extract_results(res)
 
     return df
 end
-
-main()
