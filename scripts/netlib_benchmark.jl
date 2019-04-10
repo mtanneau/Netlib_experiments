@@ -190,7 +190,8 @@ function extract_results(res)
     pbnames = lowercase.([f[1:end-4] for f in pbnames_raw])
     p = sortperm(pbnames)
     pbnames_raw = pbnames_raw[p]  # sort names
-
+    pbnames = pbnames[p]
+    
     # extract metrics
     metrics = collect(keys(res[solvers[1]][pbnames_raw[1]]))
 
