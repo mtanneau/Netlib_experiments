@@ -4,12 +4,14 @@ dir_netlib = dirname * "../dat/netlib/"
 
 include("./benchmark.jl")
 
+solvers = [SOLVERS_OS; SOLVERS_COMM]
+
 # First compilation round
 @info "Compilation rounds... This may take a few minutes"
 results = benchmark(
     dir_netlib,
     ["AFIRO.SIF"],
-    [SOLVERS_OS; SOLVERS_COMM],
+    solvers,
     verbose=false
 );
 
@@ -27,7 +29,7 @@ flush(stdout)
 results = benchmark(
     dir_netlib,
     readdir(dir_netlib),
-    [SOLVERS_OS; SOLVERS_COMM],
+    solvers,
     verbose=true
 );
 
