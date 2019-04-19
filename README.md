@@ -16,11 +16,11 @@ Download and installation instructions can be found [here](https://julialang.org
 
 
 ### Installing solvers:
-    1. Commercial solvers require a license and must be installed separately.
-        * [CPLEX](https://www.ibm.com/products/ilog-cplex-optimization-studio)
-        * [Gurobi](https://www.gurobi.com)
-        * [Mosek](https://www.mosek.com)
-    2. Open-source solvers will be downloaded automatically when installing their respective Julia APIs.
+1. Commercial solvers require a license and must be installed separately.
+    * [CPLEX](https://www.ibm.com/products/ilog-cplex-optimization-studio)
+    * [Gurobi](https://www.gurobi.com)
+    * [Mosek](https://www.mosek.com)
+2. Open-source solvers will be downloaded automatically when installing their respective Julia APIs.
 
 ### Installing Julia packages
 
