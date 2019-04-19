@@ -10,7 +10,7 @@ solvers = [SOLVERS_OS; SOLVERS_COMM]
 @info "Compilation rounds... This may take a few minutes"
 results = benchmark(
     dir_netlib,
-    ["afiro.mps"],
+    ["AFIRO.SIF"],
     solvers,
     verbose=false
 );
