@@ -8,10 +8,10 @@ uuid = "b99e7846-7c00-51b0-8f62-c81ae34c0232"
 version = "0.5.3"
 
 [[CPLEX]]
-deps = ["Compat", "Libdl", "LinQuadOptInterface", "MathProgBase", "Test"]
-git-tree-sha1 = "7ba6cfe13a0da246f36bed0f41bdd3f6dca5c30f"
+deps = ["Libdl", "LinQuadOptInterface", "LinearAlgebra", "MathProgBase", "Pkg", "SparseArrays", "Test"]
+git-tree-sha1 = "2a092f1632efcd648041c2d5c91aecbc0c142d41"
 uuid = "a076750e-1247-5638-91d2-ce28b192dca0"
-version = "0.4.4"
+version = "0.5.0"
 
 [[CSV]]
 deps = ["CategoricalArrays", "DataFrames", "DataStreams", "Dates", "Mmap", "Parsers", "Profile", "Random", "Tables", "Test", "Unicode", "WeakRefStrings"]
@@ -31,7 +31,7 @@ git-tree-sha1 = "4aa061c34012436fba6e9ae389f5c93fe9d7805e"
 repo-rev = "jpv/linuxmissinglapack"
 repo-url = "https://github.com/juan-pablo-vielma/Clp.jl.git"
 uuid = "e2554f3b-3117-50c0-817c-e040a3ddf72d"
-version = "0.6.1+"
+version = "0.6.2+"
 
 [[CodecZlib]]
 deps = ["BinaryProvider", "Libdl", "Test", "TranscodingStreams"]
@@ -171,9 +171,9 @@ version = "0.9.11"
 
 [[OrderedCollections]]
 deps = ["Random", "Serialization", "Test"]
-git-tree-sha1 = "85619a3f3e17bb4761fe1b1fd47f0e979f964d5b"
+git-tree-sha1 = "c4c13474d23c60d20a67b217f1d7f22a40edf8f1"
 uuid = "bac558e1-5e72-5ebc-8fee-abe8a469f55d"
-version = "1.0.2"
+version = "1.1.0"
 
 [[Parsers]]
 deps = ["Dates", "Mmap", "Test", "WeakRefStrings"]
@@ -263,10 +263,10 @@ deps = ["Distributed", "InteractiveUtils", "Logging", "Random"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [[TranscodingStreams]]
-deps = ["Pkg", "Random", "Test"]
-git-tree-sha1 = "f42956022d8084539f1d7219f632542b0ea686ce"
+deps = ["Random", "Test"]
+git-tree-sha1 = "a25d8e5a28c3b1b06d3859f30757d43106791919"
 uuid = "3bb67fe8-82b1-5028-8e26-92a6c54297fa"
-version = "0.9.3"
+version = "0.9.4"
 
 [[Tulip]]
 deps = ["LinearAlgebra", "MathProgBase", "Printf", "SparseArrays", "Test"]
