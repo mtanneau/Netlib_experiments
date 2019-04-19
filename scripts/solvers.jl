@@ -28,7 +28,7 @@ sGLPK() = GLPKSolverLP(
 #   presolve=true,  # no pre-solve for interior-point (apparently)
     method=:InteriorPoint,
     msg_lev=0,
-    TimeLimit=TIME_LIMIT
+    # TimeLimit=TIME_LIMIT  # GLPK will ignore time limit for IPM algo
 );
 
 sIPOPT() = IpoptSolver(
