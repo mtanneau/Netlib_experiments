@@ -20,7 +20,7 @@ res_file_name = ARGS[1]
 # Import results
 df = CSV.read(res_file_name)
 # Import instance sizes
-df_sizes = CSV.read(ROOT_DIR * "/dat/instances_sizes.csv")
+df_sizes = CSV.read(ROOT_DIR * "/dat/instances.csv")
 
 # Compute aggregated statistics
 # First, compute sets of instances
