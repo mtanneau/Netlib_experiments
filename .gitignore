@@ -3,3 +3,8 @@
 *.jl.mem
 deps/deps.jl
 dat/netlib/
+ooqp/netlib/
+ooqp/output/
+*.csv
+*.txt
+*.ipynb
