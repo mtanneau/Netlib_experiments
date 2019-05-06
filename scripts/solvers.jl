@@ -34,6 +34,7 @@ sGLPK() = GLPKSolverLP(
 sIPOPT() = IpoptSolver(
     print_level=0,
     max_cpu_time=Float64(TIME_LIMIT),
+    mehrotra_algorithm="yes"
 );
 
 sTLP() = Tulip.TulipSolver(
