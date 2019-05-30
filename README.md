@@ -48,7 +48,7 @@ or, from the terminal:
 julia --project=. -e 'using Pkg; Pkg.instantiate();' 
 ```
 
-In particular, this step will automatically download and locally install open-source solvers Clp, ECOS, GLPK and IpOpt.
+In particular, this step will automatically download and locally install open-source solvers Clp, ECOS, GLPK, IpOpt and Tulip.
 Additional steps may be required for building the Julia interface of commercial solvers. See installation instructions for each solver's API.
 
 ### Download the Netlib LP testset.
@@ -64,25 +64,37 @@ This will download all 114 instances in `.SIF` format.
 The MPS reader we use accepts `.SIF` files, but OOQP's does not (it requires `.mps` files).
 To obtain files in the `.mps` format, simply remove emtpy lines and those that begin with a `*`.
 
+You may also use the `ooqp/convert_to_mps.sh` script to make that conversion automatically (see instructions below).
 
 ## Run the experiments
 
 1. OOQP
-    * Copy-paste netlib instances (in `.mps` format!) into `ooqp/netlib` folder.
+    * Copy-paste netlib instances into `ooqp/netlib` folder.
+    ```bash
+    cp -r dat/netlib/ ooqp/netlib
+    ```
+    * Convert instances to `.mps` format
+    ```bash
+    cd ooqp
+    chmod +x convert_to_mps.sh
+    ./convert_to_mps.sh
+    ```
+
     * Run the experiments with OOQP
     ```bash
     cd ooqp/
     mkdir output
     chmod +x run_ooqp.sh
+    ./run_ooqp.sh
     ```
     Note that the command-line executable does not allow to specify time limits nor number of threads. By default, OOQP (or, more exactly, calls to MA27) may use all available cores.
     
-    Output files for each instance will be located in `ooqp/output`
+    Output files for each instance will be located in `ooqp/output/`
     * Parse the results
     ```
     julia --project=. ooqp/parse_ooqp_output.jl
     ```
-    This will parse each output file in `ooqp/output`, and save the results in `ooqp/res_ooqp.csv`.
+    This script will parse each output file in `ooqp/output`, and save the results in `ooqp/res_ooqp.csv`.
 
 
 2. Other solvers
@@ -92,20 +104,24 @@ To obtain files in the `.mps` format, simply remove emtpy lines and those that b
     julia --project=. scripts/run_netlib.jl
     ```
     This will run a compilation round, then solve each Netlib instance with each solver.
-    Computational results for each instance will be saved in `res_netlib.csv` file.
+    Computational results for each instance will be saved in `scripts/res_netlib.csv` file.
 
 
 ## Post-processing
 
 1. Merge results
 
-    Copy-paste the two columns `time_OOQP` and `success_OOQP` from `ooqp/res_ooqp.csv` into `scripts/res_netlib.csv`.
+    Merge the two `.csv` files into a single one as follows:
+    ```bash
+    julia --project=. scripts/merge_results.jl scripts/res_netlib.csv ooqp/res_ooqp.csv
+    ```
+    This will create a `res_merged.csv` file in the root at the root of this directory.
 
 2. Create tables
 
     To compute the performance statistics reported in Section 6.1, run the command
     ```bash
-    julia --project=. process_results.jl res_netlib.csv
+    julia --project=. scripts/process_results.jl res_merged.csv
     ```
 
     This will output Latex code for the corresponding tables.
