@@ -1,6 +1,6 @@
 # Netlib LP experiments
 
-This supplement is for reproducing the computational tests in Section 6.1 of "...".
+This supplement is for reproducing the computational tests in Section 6.1 of _Tulip: An open-source interior-point linear optimziation solver with abstract linear algebra_.
 
 ## Installation instructions
 
